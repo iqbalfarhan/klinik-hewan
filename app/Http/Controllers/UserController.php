@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('user/create');
     }
 
     /**
@@ -55,7 +55,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return Inertia::render('user/edit', [
+            'user' => $user
+        ]);
     }
 
     /**
