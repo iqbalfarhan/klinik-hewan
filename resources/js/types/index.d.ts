@@ -41,3 +41,24 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export type Customer = {
+    id: number;
+    name: string;
+    phone: string;
+    address: string;
+    pets?: Pet[];
+};
+
+export type Category = {
+    id: number;
+    name: string;
+    pets?: Pet[];
+};
+
+export type Pet = {
+    id: number;
+    name: string;
+    category: Category;
+    customer: Customer;
+};
