@@ -17,9 +17,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
-    Route::middleware([SuperadminMiddleware::class])->resource('user', UserController::class);
+    Route::middleware(SuperadminMiddleware::class)->resource('user', UserController::class);
     Route::resource('customer', CustomerController::class);
     Route::resource('category', CategoryController::class);
+
     Route::resource('pet', PetController::class);
 });
 

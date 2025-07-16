@@ -35,6 +35,7 @@ const ListUser = ({ users }: { users: User[] }) => {
                         <TableHead>No</TableHead>
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
+                        <TableHead>Role</TableHead>
                         <TableHead>action</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -46,6 +47,7 @@ const ListUser = ({ users }: { users: User[] }) => {
                                 <TableHead>{index + 1}</TableHead>
                                 <TableHead>{user.name}</TableHead>
                                 <TableHead>{user.email}</TableHead>
+                                <TableHead>{user.role}</TableHead>
                                 <TableHead>
                                     <Button variant={'ghost'} size={'icon'}>
                                         <Link href={route('user.show', user.id)}>

@@ -16,7 +16,7 @@ class SuperadminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        if (isset($user) && $user->email !== 'iqbalfarhan1996@gmail.com') {
+        if (isset($user) && $user->role == "admin") {
             abort(403, 'Unauthorized');
         }
 

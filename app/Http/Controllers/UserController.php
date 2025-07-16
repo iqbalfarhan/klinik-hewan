@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -13,6 +14,12 @@ class UserController extends Controller
      */
     public function index()
     {
+        // $user = Auth::user();
+
+        // // $user->assignRole('admin');
+
+        // return $user->getRoleNames();
+        
         return Inertia::render('user/index', [
             'users' => User::get()
         ]);
@@ -67,6 +74,7 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
+            'role' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id,
         ]);
 
