@@ -47,6 +47,7 @@ export function AppSidebar() {
               title: 'Medical record',
               href: route('medical.index'),
               icon: BookOpen,
+              available: menus.medical,
             },
           ]}
           label="Dashboard"
@@ -57,16 +58,19 @@ export function AppSidebar() {
               title: 'Category',
               href: route('category.index'),
               icon: Grid2X2,
+              available: menus.category,
             },
             {
               title: 'Customer',
               href: route('customer.index'),
               icon: User,
+              available: menus.customer,
             },
             {
               title: 'Pet',
               href: route('pet.index'),
               icon: Cat,
+              available: menus.pet,
             },
           ]}
           label="Dashboard"
