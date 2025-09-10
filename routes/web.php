@@ -9,6 +9,8 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
@@ -31,6 +33,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('category/bulk', [CategoryController::class, 'bulkUpdate'])->name('category.bulk.update');
     Route::delete('category/bulk', [CategoryController::class, 'bulkDelete'])->name('category.bulk.destroy');
     Route::apiResource('category', CategoryController::class);
+    Route::put('customer/bulk', [CustomerController::class, 'bulkUpdate'])->name('customer.bulk.update');
+    Route::delete('customer/bulk', [CustomerController::class, 'bulkDelete'])->name('customer.bulk.destroy');
+    Route::apiResource('customer', CustomerController::class);
 });
 
 require __DIR__.'/settings.php';
