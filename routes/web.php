@@ -11,6 +11,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\MedicalController;
+
 
 
 
@@ -41,6 +43,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('pet/bulk', [PetController::class, 'bulkUpdate'])->name('pet.bulk.update');
     Route::delete('pet/bulk', [PetController::class, 'bulkDelete'])->name('pet.bulk.destroy');
     Route::apiResource('pet', PetController::class);
+    Route::put('medical/bulk', [MedicalController::class, 'bulkUpdate'])->name('medical.bulk.update');
+    Route::delete('medical/bulk', [MedicalController::class, 'bulkDelete'])->name('medical.bulk.destroy');
+    Route::apiResource('medical', MedicalController::class);
 });
 
 require __DIR__.'/settings.php';

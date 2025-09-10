@@ -40,7 +40,17 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent className="space-y-4">
-        <NavMain items={mainNavItems} label="Dashboard" />
+        <NavMain
+          items={[
+            ...mainNavItems,
+            {
+              title: 'Medical record',
+              href: route('medical.index'),
+              icon: BookOpen,
+            },
+          ]}
+          label="Dashboard"
+        />
         <NavMain
           items={[
             {
