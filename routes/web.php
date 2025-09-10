@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PetController;
+
 
 
 
@@ -36,6 +38,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('customer/bulk', [CustomerController::class, 'bulkUpdate'])->name('customer.bulk.update');
     Route::delete('customer/bulk', [CustomerController::class, 'bulkDelete'])->name('customer.bulk.destroy');
     Route::apiResource('customer', CustomerController::class);
+    Route::put('pet/bulk', [PetController::class, 'bulkUpdate'])->name('pet.bulk.update');
+    Route::delete('pet/bulk', [PetController::class, 'bulkDelete'])->name('pet.bulk.destroy');
+    Route::apiResource('pet', PetController::class);
 });
 
 require __DIR__.'/settings.php';

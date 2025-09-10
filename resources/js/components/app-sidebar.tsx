@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { BookOpen, Database, Grid2X2, KeySquare, LayoutGrid, User, Users } from 'lucide-react';
+import { BookOpen, Cat, Database, Grid2X2, KeySquare, LayoutGrid, User, Users } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -52,6 +52,11 @@ export function AppSidebar() {
               title: 'Customer',
               href: route('customer.index'),
               icon: User,
+            },
+            {
+              title: 'Pet',
+              href: route('pet.index'),
+              icon: Cat,
             },
           ]}
           label="Dashboard"
